@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.miguel.app.pokedexapp.R;
 import com.miguel.app.pokedexapp.model.Pokemon;
+import com.miguel.app.pokedexapp.service.SincronizzaDati;
 import com.miguel.app.pokedexapp.view.adapter.PokeAdapterRV;
 
 import java.util.ArrayList;
@@ -19,6 +20,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
+
+    PokeAdapterRV adapter;
+    RecyclerView pokeList;
+    List<Pokemon> pokemons;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -30,15 +35,20 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        RecyclerView pokeList = view.findViewById(R.id.pokeList);
+
+        pokeList = view.findViewById(R.id.pokeList);
+        pokemons = new ArrayList<Pokemon>();
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         pokeList.setLayoutManager(linearLayoutManager);
 
-        PokeAdapterRV adapter = new PokeAdapterRV(getActivity(), builPokemons(), R.layout.pokecardview_item );
-        pokeList.setAdapter(adapter);
 
+        SincronizzaDati sd = new SincronizzaDati(pokemons, adapter, pokeList, getContext(), getActivity());
+        sd.execute("https://pokeapi.co/api/v2/pokemon");
+
+//        adapter = new PokeAdapterRV(getActivity(), buildPokemons(), R.layout.pokecardview_item );
+//        pokeList.setAdapter(adapter);
 
         return view;
 
@@ -46,7 +56,7 @@ public class HomeFragment extends Fragment {
 
 
 
-    public List<Pokemon> builPokemons() {
+    public List<Pokemon> buildPokemons() {
         List<Pokemon> pokemons = new ArrayList<Pokemon>();
         pokemons.add(new Pokemon("Pecachu", Arrays.asList("https://media.pokemoncentral.it/wiki/thumb/0/0d/Logo_Pok%C3%A9mon_HOME.png/800px-Logo_Pok%C3%A9mon_HOME.png")));
         pokemons.add(new Pokemon("xqcachu", Arrays.asList("https://media.pokemoncentral.it/wiki/thumb/0/0d/Logo_Pok%C3%A9mon_HOME.png/800px-Logo_Pok%C3%A9mon_HOME.png")));

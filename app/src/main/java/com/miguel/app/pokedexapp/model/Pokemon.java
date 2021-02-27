@@ -19,7 +19,7 @@ public class Pokemon {
     }
 
     public String getImages() {
-        return images.get(0);
+        return images.get(1);
     }
 
     public String getLikes() {

@@ -33,6 +33,7 @@ public class PokeAdapterRV extends RecyclerView.Adapter<PokeAdapterRV.CardViewHo
     @NonNull
     @Override
     public CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        // Inflate the layout for this fragment
         View view = LayoutInflater.from(parent.getContext()).inflate(resource, parent, false);
         return new CardViewHolder(view);
     }
@@ -42,7 +43,6 @@ public class PokeAdapterRV extends RecyclerView.Adapter<PokeAdapterRV.CardViewHo
 
         Pokemon pokemon = pokemons.get(position);
         holder.name.setText(pokemon.getName());
-
         Picasso.get().load(pokemon.getImages()).into(holder.image);
 
 //        holder.image.setOnClickListener(v -> {
