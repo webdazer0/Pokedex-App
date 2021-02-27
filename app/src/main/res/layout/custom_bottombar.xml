@@ -9,17 +9,14 @@
     android:theme="@style/Theme.PokedexApp.AppBarOverlay">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottombar"
+        android:id="@+id/my_custom_bottombar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/btmbar_height"
-
-
-        android:background="@color/colorPrimary"
-        app:itemBackground="@color/colorPrimary"
+        android:layout_height="56dp"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
-        app:menu="@menu/btmbar_menu" />
+        app:menu="@menu/custom_menu" />
 
 </com.google.android.material.appbar.AppBarLayout>
-
+<!--    android:background="@color/colorPrimary"-->
+<!--    app:itemBackground="@color/colorPrimary"-->
 

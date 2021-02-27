@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_search"
+        android:icon="@drawable/cm_search"
+        android:title="@string/tab_search" />
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/cm_home"
+        android:title="@string/tab_home" />
+    <item
+        android:id="@+id/menu_profile"
+        android:icon="@drawable/cm_me"
+        android:title="@string/tab_profile" />
+</menu>
