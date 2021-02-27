@@ -7,11 +7,31 @@
     android:fitsSystemWindows="true"
     tools:context=".view.fragment.HomeFragment">
 
+    <!--    <include layout="@layout/actionbar_toolbar" />-->
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="HOMEEEEEEEE" />
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pokeList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            />
+
+
+    </LinearLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="8dp"
+        app:srcCompat="@drawable/cc_add" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
