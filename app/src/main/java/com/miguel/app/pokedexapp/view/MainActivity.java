@@ -1,4 +1,4 @@
-package com.miguel.app.pokedexapp;
+package com.miguel.app.pokedexapp.view;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.miguel.app.pokedexapp.R;
 import com.miguel.app.pokedexapp.view.fragment.HomeFragment;
 import com.miguel.app.pokedexapp.view.fragment.ProfileFragment;
 import com.miguel.app.pokedexapp.view.fragment.SearchFragment;
